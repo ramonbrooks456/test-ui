@@ -1,5 +1,7 @@
 /* Variables and mixins declared here will be available in all other SCSS files */
 
-$font: #f6f9fb;
-$background: #141422;
-$accent: #cd3cb8;
+:root {
+  --background-color: #0b1220;
+  --text-color: #fbfbfb;
+  --accent-color: #ec3f3c;
+}

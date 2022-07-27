@@ -1,5 +1,5 @@
 <script>
-  import "../../colors.scss";
-</script>
+  import { theme } from "$lib/store.js";
 
-<slot />
+  $theme = "colors";
+</script>

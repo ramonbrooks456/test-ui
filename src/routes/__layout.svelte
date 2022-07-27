@@ -1,6 +1,11 @@
 <script>
   import "../app.scss";
+  import { theme } from "$lib/store.js";
 </script>
+
+<svelte:head>
+  <link rel="stylesheet" href={`../${$theme}.scss`} />
+</svelte:head>
 
 <div class="heading">
   <a class="title" href="/">
@@ -16,14 +21,19 @@
 <slot />
 
 <style lang="scss">
+  :global(body) {
+    background-color: var(--background-color);
+    font-family: "Poppins", sans-serif;
+    color: var(--text-color);
+  }
   .heading {
     display: flex;
     padding: 20px 20px;
     flex-wrap: wrap;
-    height: 15vh;
+    height: 100px;
   }
   .title {
-    color: $accent;
+    color: var(--accent-color);
     font-size: 3em;
   }
   .main {
@@ -33,10 +43,10 @@
     align-self: center;
     padding: 0 30px;
     font-size: 1.25rem;
-    color: $font;
+    color: var(--text-color);
   }
   .search {
-    color: $accent;
+    color: var(--accent-color);
     padding-right: 0;
   }
   @media only screen and (max-width: 600px) {

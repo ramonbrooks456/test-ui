@@ -3,9 +3,17 @@
   let anime = [1, 2, 3, 4];
 </script>
 
-<div class="main">
+<!-- <div class="main">
   <div class="main-1">
-    <h1>Main</h1>
+  </div>
+  <div class="main-2">
+
+  </div>
+</div> -->
+
+<div class="container">
+  <div class="section">
+    <!-- <h1>Main</h1> -->
     <div class="main-grid">
       {#each movies as movie}
         <div class="flex">
@@ -23,8 +31,8 @@
       {/each}
     </div>
   </div>
-  <div class="main-2">
-    <h1>Anime</h1>
+  <div class="section">
+    <!-- <h1>Anime</h1> -->
 
     <div class="culture-grid">
       {#each anime as ani}
@@ -46,19 +54,31 @@
 </div>
 
 <style lang="scss">
-  .main {
-    display: flex;
-    flex-direction: column;
+  .container {
+    height: calc(100vh - 100px);
     scroll-snap-type: y mandatory;
+    overflow: auto;
+    .section {
+      height: calc(100vh - 100px);
+      display: flex;
+      /* justify-content: center; */
+      align-items: center;
+      scroll-snap-align: center;
+      margin: 20px 0;
+    }
+  }
+  /* .main {
+    display: flex;
   }
   .main-1 {
-    height: 85vh;
-  }
-  h1 {
+    height: calc(100vh - 100px);
+    width: 100%;
+  } */
+  /* h1 {
+    color: var(--accent-color);
     padding: 20px;
-    color: $accent;
-    font-size: 2rem;
-  }
+    font-size: 2.5rem;
+  } */
   .main-grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -68,7 +88,7 @@
   .culture-grid {
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
-    margin: 20px 20px;
+    margin: 0 20px;
     gap: 20px;
   }
   .flex {
@@ -87,11 +107,11 @@
     }
   }
   .button-24 {
-    background: $accent;
-    border: 1px solid $accent;
+    background: var(--accent-color);
+    border: 1px solid var(--accent-color);
     border-radius: 6px;
     box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
-    color: $font;
+    color: var(--text-color);
     cursor: pointer;
     font-size: 1.25rem;
     padding: 10px 20px;
@@ -106,7 +126,7 @@
   .button-24:active {
     background-color: initial;
     background-position: 0 0;
-    color: $accent;
+    color: var(--accent-color);
   }
 
   .button-24:active {
